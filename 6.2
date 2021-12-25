@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	int n = 100,k = 30;
+	char* dum = new char[n];
+	cin.get(dum, k);
+	k = strlen(dum);
+	int count = 0;
+	int power = 0;
+	for (int i = k - 1; i >= 0; i--) {
+		if (dum[i] != '+') {
+			count += (int(dum[i]) - int('0')) * int(pow(10, power));
+			power++;
+		}
+		else power = 0;
+	}
+	cout << count;
+	delete dum;
+}
+
+
+
+
+
+
