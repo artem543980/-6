@@ -1,0 +1,40 @@
+#include <iostream>
+using namespace std;
+int main() {
+	int n = 10000, g;
+	char* c1 = new char[100];
+	char* c2 = new char[100];
+	char* c3 = new char[100];
+	char* s = new char[n];
+	std::cin.get(s, n);
+	//Полезные элементы
+	int k = strlen(s);
+	for (int i = k - 1; i > -1; i--) {
+		if (s[i] == ' ') {
+			g = i;
+			break;
+		}
+	}
+	for (int i = g - 1; i > -1; i--) {
+		if (s[i] == ' ') {
+			cout << s[i + 1] << ".";
+			break;
+		}
+	}
+	for (int i = k - 1; i > -1; i--) {
+		if (s[i] == ' ') {
+			cout << s[i + 1] << ".";
+			g = i;
+			break;
+		}
+	}
+	for (int i = 0; i < k; i++) {
+		if (s[i] != ' ') {
+			cout << s[i];
+		}
+		else { break; }
+	}
+	delete c1, c2, c3, s;
+	return 0;
+}
+
